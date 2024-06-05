@@ -17,7 +17,7 @@ fn handle_client(mut stream: TcpStream) {
 
 fn main() {
     let address = "127.0.0.1:8080";
-    let listener = TcpListener::bind(address).expect("Failed to bind to address.");
+    let listener = TcpListener::bind(address).expect("Failed to bind to address: {address}");
     println!("Server listening on {}", address);
 
     for stream in listener.incoming() {
